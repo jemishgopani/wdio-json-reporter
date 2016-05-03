@@ -1,0 +1,60 @@
+{
+  "name": "wdio-json-reporter",
+  "version": "0.0.1",
+  "description": "A WebdriverIO plugin. Report results in json format.",
+  "main": "build/reporter.js",
+  "scripts": {
+    "test": "grunt",
+    "build": "grunt build",
+    "prepublish": "npm prune && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "keywords": [
+    "json",
+    "reporter",
+    "webdriverio",
+    "wdio",
+    "wdio-plugin",
+    "wdio-reporter"
+  ],
+  "author": "Jim Davis <jim.davis@kroger.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "babel-runtime": "^5.8.25",
+    "mkdirp": "^0.5.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "babel-eslint": "^4.1.7",
+    "babel-istanbul": "^0.4.1",
+    "babel-plugin-rewire": "^0.1.22",
+    "codeclimate-test-reporter": "^0.1.1",
+    "eslint": "^1.4.1",
+    "eslint-config-standard": "^4.3.2",
+    "eslint-plugin-standard": "^1.3.0",
+    "grunt": "^0.4.5",
+    "grunt-babel": "^5.0.1",
+    "grunt-bump": "^0.6.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^17.1.0",
+    "grunt-mocha-istanbul": "^3.0.1",
+    "grunt-npm": "0.0.2",
+    "load-grunt-tasks": "^3.2.0"
+  },
+  "contributors": [
+    "Jim Davis"
+  ]
+}
