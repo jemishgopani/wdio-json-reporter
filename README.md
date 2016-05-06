@@ -73,7 +73,7 @@ module.exports = {
           "start": "2016-05-04T13:06:01.701Z",
           "end": "2016-05-04T13:06:08.162Z",
           "duration": 6461,
-          "state": "pass",
+          "state": "pass"
         },
         {
           "name": "@Smoke-Sample test number 2",
@@ -82,11 +82,37 @@ module.exports = {
           "duration": 5374,
           "state": "fail",
           "error": "element (#not-a-real-element) still not visible after 5000ms",
+          "errorType": "CommandError",
           "standardError": "CommandError: element (#not-a-real-element) still not visible after 5000ms\n    at Object.Future.wait (/node_modules/fibers/future.js:449:15)\n    at Object.waitForVisible (/node_modules/wdio-sync/build/index.js:345:27)\n    at Object.create.searchForStores.value (/PageObjects/some.page.js:15:17)\n    at Context.<anonymous> (/Tests/sample.spec.js:64:25)\n    at /node_modules/wdio-sync/build/index.js:579:24\n    - - - - -\n    at elements(\"#not-a-real-element\") - isVisible.js:49:17\n    at isVisible(\"#not-a-real-element\") - waitForVisible.js:40:22"
         }
       ]
-    }
-  ]
+    },
+    {
+      "name": "sample test suite number 2",
+      "duration": 25987,
+      "start": "2016-05-04T13:16:01.701Z",
+      "end": "2016-05-04T13:16:24.273Z",
+      "tests": [
+        {
+          "name": "@Smoke-Sample test number 3",
+          "start": "2016-05-04T13:06:11.701Z",
+          "end": "2016-05-04T13:06:18.162Z",
+          "duration": 6461,
+          "state": "pass"
+        },
+        {
+          "name": "@Smoke-Sample test number 4",
+          "start": "2016-05-04T13:06:18.471Z",
+          "end": "2016-05-04T13:06:23.845Z",
+          "duration": 5374,
+          "state": "fail",
+          "error": "element (#not-a-real-element) still not visible after 5000ms",
+          "errorType": "CommandError",          
+          "standardError": "CommandError: element (#not-a-real-element) still not visible after 5000ms\n    at Object.Future.wait (/node_modules/fibers/future.js:449:15)\n    at Object.waitForVisible (/node_modules/wdio-sync/build/index.js:345:27)\n    at Object.create.searchForStores.value (/PageObjects/some.page.js:15:17)\n    at Context.<anonymous> (/Tests/sample.spec.js:64:25)\n    at /node_modules/wdio-sync/build/index.js:579:24\n    - - - - -\n    at elements(\"#not-a-real-element\") - isVisible.js:49:17\n    at isVisible(\"#not-a-real-element\") - waitForVisible.js:40:22"
+        }
+      ]
+    }  
+  ] 
 }
 ```
 
