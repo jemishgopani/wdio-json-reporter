@@ -61,6 +61,11 @@ module.exports = {
     "ui": "tdd",
     "grep": "@Smoke"
   },
+  "state": {
+    "passed": 2,
+    "failed": 2,
+    "skipped": 0
+  }
   "suites": [
     {
       "name": "sample test suite number 1",
