@@ -8,12 +8,12 @@ This project was derived from the 'wdio-junit-reporter' found [here](https://git
 
 ## Installation
 
-The easiest way is to keep `wdio-json-reporter` as a devDependency in your `package.json`.
+The easiest way is to keep `wdio-json-reporter` as a dependency in your `package.json`.
 
 ```json
 {
-  "devDependencies": {
-    "wdio-json-reporter": "~0.0.1"
+  "dependencies": {
+    "wdio-json-reporter": "~0.1.0"
   }
 }
 ```
@@ -21,7 +21,7 @@ The easiest way is to keep `wdio-json-reporter` as a devDependency in your `pack
 You can simply do it by:
 
 ```bash
-npm install wdio-json-reporter --save-dev
+npm install wdio-json-reporter --save
 ```
 
 Instructions on how to install `WebdriverIO` can be found [here](http://webdriver.io/guide/getstarted/install.html).
@@ -90,6 +90,47 @@ module.exports = {
           "errorType": "CommandError",
           "standardError": "CommandError: element (#not-a-real-element) still not visible after 5000ms\n    at Object.Future.wait (/node_modules/fibers/future.js:449:15)\n    at Object.waitForVisible (/node_modules/wdio-sync/build/index.js:345:27)\n    at Object.create.searchForStores.value (/PageObjects/some.page.js:15:17)\n    at Context.<anonymous> (/Tests/sample.spec.js:64:25)\n    at /node_modules/wdio-sync/build/index.js:579:24\n    - - - - -\n    at elements(\"#not-a-real-element\") - isVisible.js:49:17\n    at isVisible(\"#not-a-real-element\") - waitForVisible.js:40:22"
         }
+      ],
+      "hooks": [
+          {
+              "start": "2016-09-08T12:50:51.829Z",
+              "end": "2016-09-08T12:50:54.475Z",
+              "duration": 2646,
+              "title": "\"before each\" hook",
+              "associatedSuite": "sample test suite number 1",
+              "associatedTest": "@Smoke-Sample test number 1"
+          },
+          {
+              "start": "2016-09-08T12:50:57.672Z",
+              "end": "2016-09-08T12:50:57.672Z",
+              "duration": 0,
+              "title": "\"after each\" hook",
+              "associatedSuite": "sample test suite number 1",
+              "associatedTest": "@Smoke-Sample test number 1"
+          },
+          {
+              "start": "2016-09-08T12:51:51.829Z",
+              "end": "2016-09-08T12:51:54.475Z",
+              "duration": 2646,
+              "title": "\"before each\" hook",
+              "associatedSuite": "sample test suite number 1",
+              "associatedTest": "@Smoke-Sample test number 2"
+          },
+          {
+              "start": "2016-09-08T12:51:57.672Z",
+              "end": "2016-09-08T12:51:57.672Z",
+              "duration": 0,
+              "title": "\"after each\" hook",
+              "associatedSuite": "sample test suite number 1",
+              "associatedTest": "@Smoke-Sample test number 2"
+          },
+          {
+              "start": "2016-09-08T12:50:57.672Z",
+              "end": "2016-09-08T12:50:57.672Z",
+              "duration": 0,
+              "title": "\"after all\" hook",
+              "associatedSuite": "sample test suite number 1"
+          }
       ]
     },
     {
@@ -115,6 +156,15 @@ module.exports = {
           "errorType": "CommandError",          
           "standardError": "CommandError: element (#not-a-real-element) still not visible after 5000ms\n    at Object.Future.wait (/node_modules/fibers/future.js:449:15)\n    at Object.waitForVisible (/node_modules/wdio-sync/build/index.js:345:27)\n    at Object.create.searchForStores.value (/PageObjects/some.page.js:15:17)\n    at Context.<anonymous> (/Tests/sample.spec.js:64:25)\n    at /node_modules/wdio-sync/build/index.js:579:24\n    - - - - -\n    at elements(\"#not-a-real-element\") - isVisible.js:49:17\n    at isVisible(\"#not-a-real-element\") - waitForVisible.js:40:22"
         }
+      ],
+      "hooks": [
+          {
+              "start": "2016-09-08T12:50:57.672Z",
+              "end": "2016-09-08T12:50:57.672Z",
+              "duration": 0,
+              "title": "\"after all\" hook",
+              "associatedSuite": "sample test suite number 2"
+          }
       ]
     }  
   ] 
