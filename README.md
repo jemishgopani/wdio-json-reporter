@@ -58,7 +58,7 @@ module.exports = {
 };
 ```
 
-Another option is to configure the resulting filename of the JSON, if combined is set to false or not set a number is added after the file name: wdio-results-1.json etc.
+Another option is to configure the resulting filename of the JSON, if combined is set to false or not set a number is added after the file name: wdio-results-0-1.json etc.
 
 
 ```js
