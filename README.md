@@ -43,6 +43,37 @@ module.exports = {
 };
 ```
 
+It's also possible to combine all the resulting jsons into one.
+
+```js
+// wdio.conf.js
+module.exports = {
+  // ...
+  reporters: ['dot', 'json'],
+  reporterOptions: {
+    outputDir: './',
+    combined: true
+  },
+  // ...
+};
+```
+
+Another option is to configure the resulting filename of the JSON, if combined is set to false or not set a number is added after the file name: wdio-results-0-1.json etc.
+
+
+```js
+// wdio.conf.js
+module.exports = {
+  // ...
+  reporters: ['dot', 'json'],
+  reporterOptions: {
+    outputDir: './',
+    filename: 'wdio-results'
+  },
+  // ...
+};
+```
+
 ## Sample Output
 ```
 {
