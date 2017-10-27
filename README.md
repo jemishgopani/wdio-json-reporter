@@ -88,6 +88,21 @@ module.exports = {
 };
 ```
 
+If you do not want to print out the mocha epilogue (i.e. `1 passing (5.2s)`), you can suppress it:
+
+```js
+// wdio.conf.js
+module.exports = {
+  // ...
+  reporters: ['json'],
+  reporterOptions: {
+    suppressEpilogue: true
+  },
+  // ...
+};
+```
+
+
 
 ## Sample Output
 ```
