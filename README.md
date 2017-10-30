@@ -74,6 +74,36 @@ module.exports = {
 };
 ```
 
+You can also choose to send the reporter output to stdout instead of writing to a file:
+
+```js
+// wdio.conf.js
+module.exports = {
+  // ...
+  reporters: ['json'],
+  reporterOptions: {
+    useStdout: true
+  },
+  // ...
+};
+```
+
+If you do not want to print out the mocha epilogue (i.e. `1 passing (5.2s)`), you can suppress it:
+
+```js
+// wdio.conf.js
+module.exports = {
+  // ...
+  reporters: ['json'],
+  reporterOptions: {
+    suppressEpilogue: true
+  },
+  // ...
+};
+```
+
+
+
 ## Sample Output
 ```
 {
@@ -184,7 +214,7 @@ module.exports = {
           "duration": 5374,
           "state": "fail",
           "error": "element (#not-a-real-element) still not visible after 5000ms",
-          "errorType": "CommandError",          
+          "errorType": "CommandError",
           "standardError": "CommandError: element (#not-a-real-element) still not visible after 5000ms\n    at Object.Future.wait (/node_modules/fibers/future.js:449:15)\n    at Object.waitForVisible (/node_modules/wdio-sync/build/index.js:345:27)\n    at Object.create.searchForStores.value (/PageObjects/some.page.js:15:17)\n    at Context.<anonymous> (/Tests/sample.spec.js:64:25)\n    at /node_modules/wdio-sync/build/index.js:579:24\n    - - - - -\n    at elements(\"#not-a-real-element\") - isVisible.js:49:17\n    at isVisible(\"#not-a-real-element\") - waitForVisible.js:40:22"
         }
       ],
@@ -197,8 +227,8 @@ module.exports = {
               "associatedSuite": "sample test suite number 2"
           }
       ]
-    }  
-  ] 
+    }
+  ]
 }
 ```
 
