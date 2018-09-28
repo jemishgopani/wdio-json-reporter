@@ -130,12 +130,19 @@ module.exports = {
   "suites": [
     {
       "name": "sample test suite number 1",
+      "tags":[
+        "@sample-tag1",
+        "@sample-tag2"
+      ],
       "duration": 12572,
       "start": "2016-05-04T13:06:01.701Z",
       "end": "2016-05-04T13:06:14.273Z",
       "tests": [
         {
           "name": "@Smoke-Sample test number 1",
+          "tags":[
+            "@sample-tag"
+          ],
           "start": "2016-05-04T13:06:01.701Z",
           "end": "2016-05-04T13:06:08.162Z",
           "duration": 6461,
@@ -143,6 +150,9 @@ module.exports = {
         },
         {
           "name": "@Smoke-Sample test number 2",
+          "tags":[
+            "@sample-tag"
+          ],
           "start": "2016-05-04T13:06:08.471Z",
           "end": "2016-05-04T13:06:13.845Z",
           "duration": 5374,
@@ -196,12 +206,17 @@ module.exports = {
     },
     {
       "name": "sample test suite number 2",
+      "tags":[
+      ],
       "duration": 25987,
       "start": "2016-05-04T13:16:01.701Z",
       "end": "2016-05-04T13:16:24.273Z",
       "tests": [
         {
           "name": "@Smoke-Sample test number 3",
+          "tags":[
+            "@sample-tag"
+          ],
           "start": "2016-05-04T13:06:11.701Z",
           "end": "2016-05-04T13:06:18.162Z",
           "duration": 6461,
@@ -209,6 +224,10 @@ module.exports = {
         },
         {
           "name": "@Smoke-Sample test number 4",
+          "tags":[
+            "@sample-tag1",
+            "@sample-tag2"
+          ],
           "start": "2016-05-04T13:06:18.471Z",
           "end": "2016-05-04T13:06:23.845Z",
           "duration": 5374,
