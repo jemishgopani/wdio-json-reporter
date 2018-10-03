@@ -13,9 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/fijijavis/wdio-json-reporter.git"
   },
-  "directories": {
-    "lib": "./lib"
-  },
   "keywords": [
     "json",
     "reporter",
