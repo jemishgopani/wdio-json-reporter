@@ -21,15 +21,17 @@ class JsonReporter extends events.EventEmitter {
 
         const { epilogue } = this.baseReporter
 
-        if(options.combined) {
-            var resultJsons = [];
+        if (options.combined) {
+            var resultJsons = []
         }
 
         this.on('suite:start', (test) => {
-            this.tags[test.title] = []
-            test.tags.forEach((element, index) => {
-                this.tags[test.title][index] = element.name
-            });
+            if (test.tags) {
+                this.tags[test.title] = []
+                test.tags.forEach((element, index) => {
+                    this.tags[test.title][index] = element.name
+                })
+            }
         })
 
         this.on('end', () => {
@@ -38,16 +40,16 @@ class JsonReporter extends events.EventEmitter {
                 const start = this.baseReporter.stats.start
                 const end = this.baseReporter.stats.end
                 const json = this.prepareJson(start, end, runnerInfo)
-                if(options.combined) {
-                    resultJsons.push(json);
+                if (options.combined) {
+                    resultJsons.push(json)
                 } else {
                     this.write(json, runnerInfo.sanitizedCapabilities, cid)
                 }
             }
-            if(options.combined) {
-                this.combineJsons(resultJsons);
+            if (options.combined) {
+                this.combineJsons(resultJsons)
             }
-            if (!options.suppressEpilogue){
+            if (!options.suppressEpilogue) {
                 epilogue.call(baseReporter)
             }
         })
@@ -86,7 +88,7 @@ class JsonReporter extends events.EventEmitter {
                 testSuite.tests = []
                 testSuite.hooks = []
 
-                for (let hookName of Object.keys(suite.hooks)){
+                for (let hookName of Object.keys(suite.hooks)) {
                     const hook = suite.hooks[hookName]
                     const hookResult = {}
 
@@ -164,7 +166,7 @@ class JsonReporter extends events.EventEmitter {
         resultSet.suites = []
 
         for (const json of resultJsons) {
-            resultSet.suites.push.apply(resultSet.suites, json.suites);
+            resultSet.suites.push.apply(resultSet.suites, json.suites)
             if (json.state) {
                 resultSet.state.passed += json.state.passed
                 resultSet.state.skipped += json.state.skipped
@@ -172,12 +174,12 @@ class JsonReporter extends events.EventEmitter {
             }
         }
 
-        this.write (resultSet, resultJsons[0].capabilities.browserName)
+        this.write(resultSet, resultJsons[0].capabilities.browserName)
     }
 
     write (json, browserName, cid) {
         if (this.options.useStdout) {
-            return console.log(JSON.stringify(json));
+            return console.log(JSON.stringify(json))
         }
 
         if (!this.options || typeof this.options.outputDir !== 'string') {
