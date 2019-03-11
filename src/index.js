@@ -15,7 +15,6 @@ class JsonReporter extends WDIOReporter {
     }
 
     prepareJson (runner) {
-        console.log('runnner', runner)
         var resultSet = initResultSet(runner)
 
         for (let specId of Object.keys(runner.specs)) {

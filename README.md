@@ -3,31 +3,83 @@ WDIO JSON Reporter
 
 > A WebdriverIO plugin. Report results in json format.
 
-This project was derived from the 'wdio-junit-reporter' found [here](https://github.com/webdriverio/wdio-junit-reporter)
 
+## WDIO Version Compatibility
+
+There are breaking changes between WDIO v4 and v5 with how custom reporters work.  The chart below shows the versions of this reporter and their WDIO compatibility version.
+
+| WDIO Json Reporter | WDIO |
+| ------------------ | ---- |
+| ^0.4.0             | v4   |
+| ^1.0.0             | v5   |
+
+
+
+# WDIO v5 Compatibility
 
 ## Installation
 
-The easiest way is to keep `wdio-json-reporter` as a dependency in your `package.json`.
-
-```json
-{
-  "dependencies": {
-    "wdio-json-reporter": "~0.1.0"
-  }
-}
-```
-
-You can simply do it by:
-
+* NPM
 ```bash
-npm install wdio-json-reporter --save
+npm install wdio-json-reporter --save-dev
 ```
 
-Instructions on how to install `WebdriverIO` can be found [here](http://webdriver.io/guide/getstarted/install.html).
+* Yarn
+```bash
+yarn add wdio-json-reporter --dev
+```
 
 ## Configuration
 
+### Results to STDOUT
+```js
+reporters: [
+  'dot',
+  ['json',{ stdout: true }]
+],
+```
+
+### Results to File
+```js
+reporters: [
+  'dot',
+  ['json',{
+      outputDir: './Results'
+  }]
+],
+```
+
+### Results to File with custom file name
+```js
+reporters: [
+  'dot',
+  ['json',{
+    outputDir: './Results',
+    outputFileFormat: function(opts) { 
+        return `results-${opts.cid}.${opts.capabilities}.json`
+    }
+  }]
+],
+```
+
+
+# WDIO v4 Compatibility
+
+## Installation
+
+* NPM
+```bash
+npm install wdio-json-reporter@^0.4.0 --save-dev
+```
+
+* Yarn
+```bash
+yarn add wdio-json-reporter@^0.4.0 --dev
+```
+
+## Configuration
+
+### Standard
 Following code shows the default wdio test runner configuration. Just add `'json'` as reporter
 to the array. To get some output during the test you can run the [WDIO Dot Reporter](https://github.com/webdriverio/wdio-dot-reporter) and the WDIO JSON Reporter at the same time:
 
@@ -37,13 +89,13 @@ module.exports = {
   // ...
   reporters: ['dot', 'json'],
   reporterOptions: {
-    outputDir: './'
+    outputDir: './Results'
   },
   // ...
 };
 ```
 
-It's also possible to combine all the resulting jsons into one.
+### Single Results File
 
 ```js
 // wdio.conf.js
@@ -58,8 +110,7 @@ module.exports = {
 };
 ```
 
-Another option is to configure the resulting filename of the JSON, if combined is set to false or not set a number is added after the file name: wdio-results-0-1.json etc.
-
+### Custom File Name
 
 ```js
 // wdio.conf.js
@@ -74,7 +125,7 @@ module.exports = {
 };
 ```
 
-You can also choose to send the reporter output to stdout instead of writing to a file:
+### STDOUT
 
 ```js
 // wdio.conf.js
