@@ -1,0 +1,12 @@
+{
+    "type": "test",
+    "start": "2019-03-07T19:49:39.527Z",
+    "_duration": 8,
+    "uid": "test-00-0",
+    "cid": "0-0",
+    "title": "should report pass",
+    "fullTitle": "Sample Suite 1 should report pass",
+    "output": [],
+    "state": "passed",
+    "end": "2019-03-07T19:49:39.535Z"
+}

@@ -1,13 +1,11 @@
 {
   "name": "wdio-json-reporter",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "A WebdriverIO plugin. Report results in json format.",
-  "main": "build/reporter.js",
+  "main": "./src/index.js",
   "scripts": {
-    "build": "yarn clean && yarn compile",
-    "clean": "rm -rf ./build && rm -rf ./screenshots",
-    "compile": "babel src/ -d build/",
-    "eslint": "eslint ./src test/"
+    "test": "jest",
+    "lint": "eslint ./src test/"
   },
   "repository": {
     "type": "git",
@@ -28,26 +26,27 @@
   },
   "homepage": "https://github.com/fijijavis/wdio-json-reporter#readme",
   "dependencies": {
-    "babel-runtime": "^5.8.25",
-    "mkdirp": "^0.5.1",
-    "uuid": "^2.0.2"
+    "@wdio/reporter": "^5.7.0",
+    "jest-matchers": "^20.0.3"
   },
   "devDependencies": {
-    "babel-cli": "~6.24.1",
-    "babel-core": "~6.25.0",
-    "babel-eslint": "~7.2.1",
-    "babel-istanbul": "~0.12.2",
-    "babel-plugin-add-module-exports": "~0.2.1",
-    "babel-preset-env": "~1.6.1",
-    "babel-preset-stage-0": "~6.24.1",
     "eslint": "~4.4.0",
     "eslint-config-standard": "~10.2.0",
-    "eslint-plugin-import": "~2.7.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "~5.1.0",
     "eslint-plugin-promise": "~3.5.0",
-    "eslint-plugin-standard": "~3.0.1"
+    "eslint-plugin-standard": "~3.0.1",
+    "jest": "^24.3.0"
   },
   "contributors": [
     "Jim Davis"
-  ]
+  ],
+  "peerDependencies": {
+    "@wdio/cli": "^5.7.1"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  }
 }

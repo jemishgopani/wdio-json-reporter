@@ -1,0 +1,11 @@
+{
+    "type": "test",
+    "start": "2019-03-07T19:53:13.333Z",
+    "_duration": 0,
+    "uid": "skipped-0",
+    "cid": "0-0",
+    "title": "should report skip",
+    "fullTitle": "Sample Suite 1 should report skip",
+    "output": [],
+    "state": "skipped"
+}
