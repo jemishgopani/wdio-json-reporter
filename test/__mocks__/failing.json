@@ -1,0 +1,24 @@
+{
+    "type": "test",
+    "start": "2019-03-07T19:53:13.320Z",
+    "_duration": 12,
+    "uid": "test-00-1",
+    "cid": "0-0",
+    "title": "should report fail",
+    "fullTitle": "Sample Suite 1 should report fail",
+    "output": [],
+    "state": "failed",
+    "end": "2019-03-07T19:53:13.332Z",
+    "errors": [
+        {
+            "message": "This test failed",
+            "stack": "This is an error call stack",
+            "type": "Error"
+        }
+    ],
+    "error": {
+        "message": "This test failed",
+        "stack": "This is an error call stack",
+        "type": "Error"
+    }
+}

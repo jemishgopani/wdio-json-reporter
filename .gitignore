@@ -2,9 +2,7 @@
 node_modules/
 npm-debug.log
 .vscode/*
-wdiomochawesome.json
 build/
 screenshots/
 phantom.log
-wdio-mochawesome-report/
-mochawesome-report/
+yarn-error.log
