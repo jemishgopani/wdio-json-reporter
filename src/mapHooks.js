@@ -10,6 +10,19 @@ module.exports = function (suiteHooks) {
         hookResult.title = hook.title
         hookResult.associatedSuite = hook.parent
         hookResult.associatedTest = hook.currentTest
+
+        if (hook.error) {
+            if (hook.error.type) {
+                hookResult.errorType = hook.error.type
+            }
+            if (hook.error.message) {
+                hookResult.error = hook.error.message
+            }
+            if (hook.error.stack) {
+                hookResult.standardError = hook.error.stack
+            }
+        }
+
         hooks.push(hookResult)
     }
     return hooks

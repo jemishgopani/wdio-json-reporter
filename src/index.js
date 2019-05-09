@@ -20,13 +20,6 @@ class JsonReporter extends WDIOReporter {
         for (let specId of Object.keys(runner.specs)) {
             resultSet.specs.push(runner.specs[specId])
             for (let suiteKey of Object.keys(this.suites)) {
-                /**
-                 * ignore root before all
-                 */
-                if (suiteKey.match(/^"before all"/)) {
-                    continue
-                }
-
                 const suite = this.suites[suiteKey]
                 let testSuite = {}
                 testSuite.name = suite.title
@@ -36,6 +29,7 @@ class JsonReporter extends WDIOReporter {
                 testSuite.tests = MapTests(suite.tests)
                 testSuite.hooks = MapHooks(suite.hooks)
 
+                resultSet.state.failed += testSuite.hooks.filter(hook => hook.error).length
                 resultSet.state.passed += testSuite.tests.filter(test => test.state === 'passed').length
                 resultSet.state.failed += testSuite.tests.filter(test => test.state === 'failed').length
                 resultSet.state.skipped += testSuite.tests.filter(test => test.state === 'skipped').length
