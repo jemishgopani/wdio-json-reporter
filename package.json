@@ -38,6 +38,9 @@
     "eslint-plugin-standard": "~3.0.1",
     "jest": "^24.3.0"
   },
+  "resolutions":{
+    "braces": "~2.3.0"
+  },
   "contributors": [
     "Jim Davis"
   ],
