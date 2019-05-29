@@ -1,8 +1,12 @@
 {
   "name": "wdio-json-reporter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A WebdriverIO plugin. Report results in json format.",
   "main": "./src/index.js",
+  "files": [
+    "src",
+    "mergeResults.js"
+  ],
   "scripts": {
     "test": "jest",
     "lint": "eslint ./src test/"
