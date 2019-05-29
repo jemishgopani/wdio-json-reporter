@@ -26,6 +26,7 @@ class JsonReporter extends WDIOReporter {
                 testSuite.duration = suite._duration
                 testSuite.start = suite.start
                 testSuite.end = suite.end
+                testSuite.sessionId = runner.sessionId
                 testSuite.tests = MapTests(suite.tests)
                 testSuite.hooks = MapHooks(suite.hooks)
 
