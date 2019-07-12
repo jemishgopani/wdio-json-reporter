@@ -7,8 +7,16 @@ const hookStub = [{
     'cid': '0-0',
     'title': '"before each" hook',
     'parent': 'Sample Suite',
-    'errors': [],
-    'end': '2019-03-07T19:15:49.427Z'
+    'errors':
+        [{ 'message': 'expected 1 to equal 6',
+        'stack':
+        'AssertionError: expected 1 to equal 6',
+        'type': 'AssertionError',
+        'expected': 6,
+        'actual': 1
+        }],
+    'end': '2019-03-07T19:15:49.427Z',
+    'state': 'failed',
 },
 {
     'type': 'hook',
@@ -32,14 +40,16 @@ describe('Tests to validate mapping hooks', () => {
             end: hookStub[0].end,
             duration: hookStub[0]._duration,
             title: hookStub[0].title,
-            associatedSuite: hookStub[0].parent
+            associatedSuite: hookStub[0].parent,
+            state: hookStub[0].state
         })
         expect(hookData[1]).toMatchObject({
             start: hookStub[1].start,
             end: hookStub[1].end,
             duration: hookStub[1]._duration,
             title: hookStub[1].title,
-            associatedSuite: hookStub[1].parent
+            associatedSuite: hookStub[1].parent,
+            state: 'passed'
         })
     })
 })
