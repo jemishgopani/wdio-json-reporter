@@ -10,6 +10,7 @@ module.exports = function (suiteHooks) {
         hookResult.title = hook.title
         hookResult.associatedSuite = hook.parent
         hookResult.associatedTest = hook.currentTest
+        hookResult.state = hook.errors.length ? hook.state : 'passed'
 
         if (hook.error) {
             if (hook.error.type) {
