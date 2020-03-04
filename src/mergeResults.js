@@ -41,6 +41,10 @@ function mergeData (rawData) {
         }
     })
 
+    mergedResults.suites.forEach((suite) => {
+        mergedResults.end = (suite.end > mergedResults.end ? suite.end : mergedResults.end)
+    })
+
     return mergedResults
 }
 
