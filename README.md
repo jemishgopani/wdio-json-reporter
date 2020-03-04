@@ -78,8 +78,10 @@ to get a single report for ALL test execution.  Consider the following:
 1) Create a small node script
 ```javascript
 const mergeResults = require('wdio-json-reporter/mergeResults')
-mergeResults()
+mergeResults('./Results', 'wdio-json-*', 'wdio-custom-filename.json')
 ```
+
+*Note:* `wdio-custom-filename.json` is optional, is the parameter is not provided the default value is `wdio-merged.json`
 
 2) Call node script from command line and pass 2 arguments
 
@@ -89,6 +91,16 @@ mergeResults()
 Example:
 ```bash
 node mergeResults.json ./Results "wdio-json-*"
+```
+
+3) As part of a wdio hook
+
+```js
+// Located in your wdio.conf.js file
+onComplete: function (exitCode, config, capabilities, results) {
+  const mergeResults = require('wdio-json-reporter/mergeResults')
+  mergeResults('./Results', 'results-*', 'wdio-custom-filename.json')
+}
 ```
 
 Upon completion, the merge script will output a single json file named `wdio-merged.json` in the provided <RESULTS_DIR>

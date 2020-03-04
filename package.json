@@ -42,7 +42,7 @@
     "eslint-plugin-standard": "~3.0.1",
     "jest": "^24.3.0"
   },
-  "resolutions":{
+  "resolutions": {
     "braces": "~2.3.0"
   },
   "contributors": [
