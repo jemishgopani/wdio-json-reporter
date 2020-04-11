@@ -1,6 +1,6 @@
 {
   "name": "wdio-json-reporter",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "A WebdriverIO plugin. Report results in json format.",
   "main": "./src/index.js",
   "files": [
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/fijijavis/wdio-json-reporter#readme",
   "dependencies": {
-    "@wdio/reporter": "^5.7.0",
+    "@wdio/reporter": "^6.0.14",
     "jest-matchers": "^20.0.3"
   },
   "devDependencies": {
