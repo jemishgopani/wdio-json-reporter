@@ -12,6 +12,7 @@ There are breaking changes between WDIO v4 and v5 with how custom reporters work
 | ------------------ | ---- |
 | ^0.4.0             | v4   |
 | ^1.0.0             | v5   |
+| ^2.0.0             | v6   |
 
 
 
