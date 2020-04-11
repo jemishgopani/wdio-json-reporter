@@ -1,6 +1,6 @@
 {
   "name": "wdio-json-reporter",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A WebdriverIO plugin. Report results in json format.",
   "main": "./src/index.js",
   "files": [
@@ -50,7 +50,7 @@
     "Jim Davis"
   ],
   "peerDependencies": {
-    "@wdio/cli": "^5.7.1"
+    "@wdio/cli": "^6.0.15"
   },
   "jest": {
     "testPathIgnorePatterns": [
