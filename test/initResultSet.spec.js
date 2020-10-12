@@ -9,13 +9,7 @@ describe("Tests to validate initializing the result set", () => {
         expect(resultSet.capabilities.browserName).toBe(
             runnerMock.capabilities.browserName
         );
-        expect(resultSet.host).toBe(runnerMock.config.hostname);
-        expect(resultSet.port).toBe(runnerMock.config.port);
-        expect(resultSet.baseUrl).toBe(runnerMock.config.baseUrl);
-        expect(resultSet.waitForTimeout).toBe(runnerMock.config.waitForTimeout);
-        expect(resultSet.framework).toBe(runnerMock.config.framework);
-        expect(resultSet.mochaOpts).toBe(runnerMock.config.mochaOpts);
-        expect(resultSet.suites).toHaveLength(0);
+        expect(resultSet.tests).toHaveLength(0);
         expect(resultSet.specs).toHaveLength(0);
         expect(resultSet.state).toMatchObject({
             passed: 0,
