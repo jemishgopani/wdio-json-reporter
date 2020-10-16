@@ -1,5 +1,5 @@
 {
-  "name": "@taiadimitrova/wdio-basic-xray-json-reporter",
+  "name": "wdio-basic-xray-json-reporter",
   "version": "1.0.0",
   "description": "A WebdriverIO plugin. Report results in json format compatible with xray import.",
   "main": "./src/index.js",
