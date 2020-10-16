@@ -1,7 +1,7 @@
 {
-  "name": "wdio-json-reporter",
-  "version": "2.0.0",
-  "description": "A WebdriverIO plugin. Report results in json format.",
+  "name": "@taiadimitrova/wdio-basic-xray-json-reporter",
+  "version": "1.0.0",
+  "description": "A WebdriverIO plugin. Report results in json format compatible with xray import.",
   "main": "./src/index.js",
   "files": [
     "src",
@@ -13,22 +13,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fijijavis/wdio-json-reporter.git"
+    "url": "git+https://github.com/taiadimitrova/wdio-basic-xray-json-reporter.git"
   },
   "keywords": [
-    "json",
+    "json-xray",
     "reporter",
     "webdriverio",
     "wdio",
     "wdio-plugin",
     "wdio-reporter"
   ],
-  "author": "Jim Davis <jim.davis@kroger.com>",
+  "author": "Taia Dimitrova <taia.dimitrova@assist.ro>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fijijavis/wdio-json-reporter/issues"
+    "url": "https://github.com/taiadimitrova/wdio-basic-xray-json-reporter/issues"
   },
-  "homepage": "https://github.com/fijijavis/wdio-json-reporter#readme",
+  "homepage": "https://github.com/taiadimitrova/wdio-basic-xray-json-reporter#readme",
   "dependencies": {
     "@wdio/reporter": "^6.0.14",
     "jest-matchers": "^20.0.3"
@@ -47,7 +47,7 @@
     "set-value": "~2.0.1"
   },
   "contributors": [
-    "Jim Davis"
+    "Taia Dimitrova"
   ],
   "peerDependencies": {
     "@wdio/cli": "^6.0.15"
