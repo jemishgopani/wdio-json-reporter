@@ -26,9 +26,9 @@ class JsonReporter extends WDIOReporter {
                     const test = suite.tests[testName];
                     const testCase = {};
 
-                    testCase.testKey = runner.specs[specId]
-                        .split("\\")[3]
-                        .split(".")[0];
+                    let specPathArray = runner.specs[specId].split("\\");
+                    let specPath = specPathArray[specPathArray.length - 1];
+                    testCase.testKey = specPath.split("_")[0];
                     testCase.name = test.title;
                     testCase.start = test.start;
                     testCase.end = test.end;
