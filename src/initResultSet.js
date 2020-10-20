@@ -1,12 +1,13 @@
 module.exports = function (runner) {
-    let resultSet = {};
+    let resultSet = {
+        info: {},
+    };
 
-    resultSet.start = runner.start;
-    resultSet.end = runner.end;
-    resultSet.capabilities = runner.capabilities.browserName;
+    resultSet.testExecutionKey = process.env.EXEKEY;
+    resultSet.info.start = runner.start;
+    resultSet.info.finish = runner.end;
+    resultSet.info.testEnvironments = process.env.DEVICE;
     resultSet.tests = [];
-    resultSet.specs = [];
-    resultSet.state = { passed: 0, failed: 0, skipped: 0 };
 
     return resultSet;
 };

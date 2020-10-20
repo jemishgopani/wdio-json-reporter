@@ -32,16 +32,8 @@ function mergeData(rawData) {
             // use the first result so that we have the right shape
             mergedResults = {};
             Object.assign(mergedResults, data);
-            mergedResults.capabilities = [
-                mergedResults.capabilities.browserName,
-            ]; // make this an array so we can capture all caps
         } else {
             mergedResults.tests.push(...data.tests);
-            mergedResults.specs.push(...data.specs);
-            mergedResults.state.passed += data.state.passed;
-            mergedResults.state.failed += data.state.failed;
-            mergedResults.state.skipped += data.state.skipped;
-            mergedResults.capabilities.push(data.capabilities);
         }
     });
 
