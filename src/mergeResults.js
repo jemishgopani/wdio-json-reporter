@@ -42,6 +42,8 @@ function mergeData(rawData) {
             suite.end > mergedResults.end ? suite.end : mergedResults.end;
     });
 
+    mergedResults.tests.sort((a, b) => (a.status < b.status ? 1 : -1));
+
     return mergedResults;
 }
 

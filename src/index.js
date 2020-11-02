@@ -30,6 +30,7 @@ class JsonReporter extends WDIOReporter {
                     testCase.start = test.start;
                     testCase.finish = test.end;
                     comments.push(runner.capabilities.browserName);
+                    comments.push(suite.title);
                     comments.push(test.title);
                     let status;
 

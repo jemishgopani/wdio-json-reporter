@@ -4,8 +4,8 @@ module.exports = function (runner) {
         info: {},
     };
 
-    (resultSet.testExecutionKey = process.env.EXEKEY),
-        (resultSet.info.testEnvironments = [process.env.DEVICE]);
+    resultSet.testExecutionKey = process.env.EXEKEY;
+    resultSet.info.testEnvironments = [process.env.DEVICE];
     resultSet.tests = [];
 
     return resultSet;
