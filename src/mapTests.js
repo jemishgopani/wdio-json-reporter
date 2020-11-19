@@ -6,8 +6,6 @@ module.exports = function (suiteTests) {
         const testCase = {};
 
         testCase.name = test.title;
-        testCase.start = test.start;
-        testCase.end = test.end;
         testCase.duration = test._duration;
         testCase.state = test.state;
 

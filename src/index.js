@@ -27,8 +27,6 @@ class JsonReporter extends WDIOReporter {
                     let specPathArray = runner.specs[specId].split("_");
                     let specPath = specPathArray[0].split("/");
                     testCase.testKey = specPath[specPath.length - 1];
-                    testCase.start = test.start;
-                    testCase.finish = test.end;
                     comments.push(runner.capabilities.browserName);
                     comments.push(suite.title);
                     comments.push(test.title);
