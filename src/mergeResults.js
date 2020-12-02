@@ -16,7 +16,12 @@ function getDataFromFiles (dir, filePattern) {
     const data = []
 
     fileNames.forEach(fileName => {
-        data.push(JSON.parse(fs.readFileSync(`${dir}/${fileName}`)))
+        try {
+            data.push(JSON.parse(fs.readFileSync(`${dir}/${fileName}`)))
+        } catch (e) {
+            console.error(e)
+            console.log(`${dir}/${fileName} was not included in the merged report due to a parsing error`)
+        }
     })
 
     return data
