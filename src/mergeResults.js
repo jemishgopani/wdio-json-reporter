@@ -6,12 +6,12 @@ const mergeResults = (...args) => {
     const filePattern = args[1] || process.argv[3];
     const customFileName = args[2] || process.argv[4];
 
-    const rawData = getDataFromFiles(dir, filePattern);
-    const mergedResults = mergeData(rawData);
+    const rawData = await getDataFromFiles(dir, filePattern);
+    const mergedResults =  await mergeData(rawData);
     writeFile(dir, mergedResults, customFileName);
 };
 
-function getDataFromFiles(dir, filePattern) {
+async function getDataFromFiles(dir, filePattern) {
     const fileNames = fs
         .readdirSync(dir)
         .filter((file) => file.match(filePattern));
@@ -24,7 +24,7 @@ function getDataFromFiles(dir, filePattern) {
     return data;
 }
 
-function mergeData(rawData) {
+async function mergeData(rawData) {
     let mergedResults;
 
     rawData.forEach((data) => {
