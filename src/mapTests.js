@@ -16,9 +16,9 @@ module.exports = function (suiteTests) {
             if (test.error.message) {
                 testCase.error = test.error.message;
             }
-            if (test.error.stack) {
-                testCase.standardError = test.error.stack;
-            }
+            // if (test.error.stack) {
+            //     testCase.standardError = test.error.stack;
+            // }
         }
 
         tests.push(testCase);
