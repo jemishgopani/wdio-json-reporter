@@ -9,8 +9,8 @@ class JsonReporter extends WDIOReporter {
 
     onRunnerEnd(runner) {
         let json = this.prepareJson(runner);
-        let parsedJson = JSON.parse(json);
-        this.write(JSON.stringify(parsedJson));
+        let parsedJson = JSON.stringify(json);
+        this.write(JSON.parse(parsedJson));
     }
 
     prepareJson(runner) {
