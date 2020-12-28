@@ -8,6 +8,6 @@ module.exports = function (runner) {
     resultSet.testExecutionKey = process.env.EXEKEY;
     resultSet.info.testEnvironments = [process.env.DEVICE];
 
-    console.log("Result set: ", resultSet);
+    console.log("Tets - Result set: ", resultSet);
     return resultSet;
 };

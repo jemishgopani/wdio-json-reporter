@@ -60,7 +60,7 @@ class JsonReporter extends WDIOReporter {
                 resultSet.tests = [...resultSet.tests, ...alltests];
             }
         }
-
+        console.log("RESULT SET: ", resultSet);
         return resultSet;
     }
 }
