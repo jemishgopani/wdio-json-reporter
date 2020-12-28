@@ -23,6 +23,5 @@ module.exports = function (suiteTests) {
 
         tests.push(testCase);
     }
-    console.log("TESTS: ", tests);
     return tests;
 };

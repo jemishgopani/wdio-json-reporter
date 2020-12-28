@@ -9,7 +9,7 @@ class JsonReporter extends WDIOReporter {
 
     onRunnerEnd(runner) {
         let json = this.prepareJson(runner);
-        this.write(JSON.stringify(json));
+        console.log("JSON: ", this.write(JSON.stringify(json)));
     }
 
     prepareJson(runner) {
@@ -60,7 +60,6 @@ class JsonReporter extends WDIOReporter {
                 resultSet.tests = [...resultSet.tests, ...alltests];
             }
         }
-        console.log("RESULT SET: ", resultSet);
         return resultSet;
     }
 }
