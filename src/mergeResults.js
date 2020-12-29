@@ -44,6 +44,7 @@ function mergeData(rawData) {
 
     mergedResults.tests.sort((a, b) => (a.status < b.status ? 1 : -1));
 
+    console.log('MERGED result set: ', mergedResults)
     return mergedResults;
 }
 
