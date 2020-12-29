@@ -8,25 +8,14 @@ class JsonReporter extends WDIOReporter {
     }
 
     onRunnerEnd(runner) {
-        let json = this.prepareJson(runner);
-
-        console.log('BEFORE stringify: ', json)
-        console.log('AFTER stringify: ', JSON.stringify(json))
-
-        // let json = {
-        //     testExecutionKey: "CBC-9920",
-        //     info: {
-        //         testEnvironments: ["desktop"],
-        //     },
-        //     tests: [
-        //         {
-        //             testKey: "CBC-6965",
-        //             comment: 'chrome,SCENARIO: desktop | Gallery | Social Share Buttons | Verify Facebook button functionality(custom facebook popup) on richverse.com | 202 | qa-automation-post-01,STEP 7: Check that the Stay up to date popup is closing,Error:element (".qa-fb-like-popup__close-icon") still not existing after 10000ms',
-        //             status: "FAIL",
-        //         },
-        //     ],
-        // };
-        this.write(JSON.stringify(json));
+        const json = this.prepareJson(runner);
+        
+        try {
+            this.write(JSON.stringify(json));
+        } catch (error) {
+            console.log('ERROR on write onRunnerEnd: ', error)
+        }
+        
     }
 
     prepareJson(runner) {
