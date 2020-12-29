@@ -9,13 +9,12 @@ class JsonReporter extends WDIOReporter {
 
     onRunnerEnd(runner) {
         const json = this.prepareJson(runner);
-        
+
         try {
             this.write(JSON.stringify(json));
         } catch (error) {
-            console.log('ERROR on write onRunnerEnd: ', error)
+            console.log("ERROR on write onRunnerEnd: ", error);
         }
-        
     }
 
     prepareJson(runner) {
