@@ -1,61 +1,53 @@
-const WDIOReporter = require("@wdio/reporter").default;
-const initResultSet = require("./initResultSet");
-class JsonReporter extends WDIOReporter {
-    constructor(options) {
-        options = Object.assign(options);
-        super(options);
+const fs = require('fs');
+const path = require('path');
+function getDataFromFiles(dir, filePattern) {
+  const fileNames = fs.readdirSync(dir).filter((file) => file.match(filePattern));
+  const data = [];
+  fileNames.forEach((fileName) => {
+    let fileContent = '';
+    try {
+      fileContent = fs.readFileSync(`${dir}/${fileName}`, 'utf8');
+      data.push(JSON.parse(fileContent));
+    } catch (error) {
+      console.log('error getDataFromFiles: ', error);
     }
-    onRunnerEnd(runner) {
-        const json = this.prepareJson(runner);
-        try {
-            this.write(JSON.stringify(json));
-        } catch (error) {
-            console.log('ERROR on write onRunnerEnd: ', error)
-        }
-    }
-    prepareJson(runner) {
-        var resultSet = initResultSet(runner);
-        for (let specId of Object.keys(runner.specs)) {
-            for (let suiteKey of Object.keys(this.suites)) {
-                const suite = this.suites[suiteKey];
-                let alltests = [];
-                for (let testName of Object.keys(suite.tests)) {
-                    const test = suite.tests[testName];
-                    const testCase = {};
-                    const comments = [];
-                    let specPathArray = runner.specs[specId].split("_");
-                    let specPath = specPathArray[0].split("/");
-                    testCase.testKey = specPath[specPath.length - 1];
-                    comments.push(runner.capabilities.browserName);
-                    comments.push(suite.title);
-                    comments.push(test.title);
-                    let status;
-                    switch (test.state) {
-                        case "passed":
-                            status = "PASS";
-                            break;
-                        case "failed":
-                            status = "FAIL";
-                            break;
-                        default:
-                            status = "TODO";
-                            break;
-                    }
-                    if (test.error) {
-                        if (test.error.type) {
-                            comments.push(
-                                test.error.type + ":" + test.error.message
-                            );
-                        }
-                    }
-                    testCase.comment = comments.join();
-                    testCase.status = status;
-                    alltests.push(testCase);
-                }
-                resultSet.tests = [...resultSet.tests, ...alltests];
-            }
-        }
-        return resultSet;
-    }
+  });
+  return data;
 }
-exports.default = JsonReporter;
+function mergeData(rawData) {
+  console.log('rawData: ', rawData);
+  const mergedResults = {
+    tests: [],
+  };
+  rawData.forEach((data) => {
+    if (mergedResults === undefined) {
+      Object.assign(mergedResults, data);
+    } else {
+      mergedResults.tests.push(...data.tests);
+    }
+  });
+  mergedResults.tests.sort((a, b) => (a.status < b.status ? 1 : -1));
+  return mergedResults;
+}
+function writeFile(dir, mergedResults, customFileName) {
+  let fileName = customFileName || 'wdio-merged.json';
+  const filePath = path.join(dir, fileName);
+  console.log('FILEPATH: ', filePath);
+  console.log('DIR: ', dir);
+  console.log('mergedResults: ', mergedResults);
+  console.log('customFileName: ', customFileName);
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(mergedResults));
+  } catch (error) {
+    console.log('ERROR on write in writeFile: ', error);
+  }
+}
+const mergeResults = (...args) => {
+  const dir = args[0] || process.argv[2];
+  const filePattern = args[1] || process.argv[3];
+  const customFileName = args[2] || process.argv[4];
+  const rawData = getDataFromFiles(dir, filePattern);
+  const mergedResults = mergeData(rawData);
+  writeFile(dir, mergedResults, customFileName);
+};
+module.exports = mergeResults;
