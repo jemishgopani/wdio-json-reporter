@@ -18,7 +18,14 @@ function getDataFromFiles(dir, filePattern) {
     const data = [];
 
     fileNames.forEach((fileName) => {
-        data.push(JSON.parse(fs.readFileSync(`${dir}/${fileName}`)));
+        const fileContent = fs.readFileSync(`${dir}/${fileName}`)
+        try {
+            const fileContentParsed = JSON.parse(fileContent)
+            data.push(JSON.parse(fileContentParsed));
+        } catch (error) {
+            console.log('JSON parse failed with error: ', error)
+        }
+        
     });
 
     return data;
