@@ -13,6 +13,7 @@ There are breaking changes between WDIO v4 and v5 with how custom reporters work
 | ^0.4.0             | v4   |
 | ^1.0.0             | v5   |
 | ^2.0.0             | v6   |
+| ^3.0.0             | v7   |
 
 
 
@@ -56,7 +57,7 @@ reporters: [
   'dot',
   ['json',{
     outputDir: './Results',
-    outputFileFormat: function(opts) { 
+    outputFileFormat: function(opts) {
         return `results-${opts.cid}.${opts.capabilities}.json`
     }
   }]
@@ -64,8 +65,8 @@ reporters: [
 ```
 
 ## Result Files
-With WDIO v5, reporting has moved from a centralized process to one that is handled by each of the "sessions" spun up for parallel test execution.  
-This change helped reduce the amount of chatter during WDIO test execution and thus improved performance.  The downside is we are no longer able 
+With WDIO v5, reporting has moved from a centralized process to one that is handled by each of the "sessions" spun up for parallel test execution.
+This change helped reduce the amount of chatter during WDIO test execution and thus improved performance.  The downside is we are no longer able
 to get a single report for ALL test execution.  Consider the following:
 
 2 suites of tests configured to run in 2 browsers:

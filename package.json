@@ -1,6 +1,6 @@
 {
   "name": "wdio-json-reporter",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A WebdriverIO plugin. Report results in json format.",
   "main": "./src/index.js",
   "files": [
@@ -30,27 +30,26 @@
   },
   "homepage": "https://github.com/fijijavis/wdio-json-reporter#readme",
   "dependencies": {
-    "@wdio/reporter": "^6.0.14",
+    "@wdio/reporter": "^7.16.3",
     "jest-matchers": "^20.0.3"
   },
   "devDependencies": {
-    "eslint": "~4.18.2",
-    "eslint-config-standard": "~10.2.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "~5.1.0",
-    "eslint-plugin-promise": "~3.5.0",
-    "eslint-plugin-standard": "~3.0.1",
-    "jest": "^24.3.0"
+    "eslint": "~8.1.0",
+    "eslint-config-standard": "~16.0.3",
+    "eslint-plugin-import": "~2.25.2",
+    "eslint-plugin-node": "~11.1.0",
+    "eslint-plugin-promise": "~5.1.1",
+    "jest": "~27.3.1"
   },
   "resolutions": {
-    "braces": "~2.3.0",
-    "set-value": "~2.0.1"
+    "braces": "~3.0.2",
+    "set-value": "~4.1.0"
   },
   "contributors": [
     "Jim Davis"
   ],
   "peerDependencies": {
-    "@wdio/cli": "^6.0.15"
+    "@wdio/cli": "^7.16.3"
   },
   "jest": {
     "testPathIgnorePatterns": [
