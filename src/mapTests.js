@@ -1,4 +1,4 @@
-module.exports = function (suiteTests) {
+export default function (suiteTests) {
     let tests = []
     /** Add Test Info */
     for (let testName of Object.keys(suiteTests)) {

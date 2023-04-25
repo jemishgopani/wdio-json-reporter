@@ -1,4 +1,4 @@
-module.exports = function (runner) {
+export default function (runner) {
     let resultSet = {}
 
     resultSet.start = runner.start

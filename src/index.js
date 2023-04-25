@@ -1,9 +1,9 @@
-const WDIOReporter = require('@wdio/reporter').default
-const MapHooks = require('./mapHooks')
-const MapTests = require('./mapTests')
-const initResultSet = require('./initResultSet')
+import MapHooks from './mapHooks.js';
+import MapTests from './mapTests.js';
+import initResultSet from './initResultSet.js';
+import WDIOReporter from '@wdio/reporter';
 
-class JsonReporter extends WDIOReporter {
+export default class JsonReporter extends WDIOReporter {
     constructor (options) {
         options = Object.assign(options)
         super(options)
@@ -41,5 +41,3 @@ class JsonReporter extends WDIOReporter {
         return resultSet
     }
 }
-
-exports.default = JsonReporter

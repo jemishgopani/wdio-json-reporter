@@ -1,4 +1,4 @@
-module.exports = function (suiteHooks) {
+export default function (suiteHooks) {
     let hooks = []
     for (let hookName of Object.keys(suiteHooks)) {
         const hook = suiteHooks[hookName]

@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs';
+import path from 'path';
 
-const mergeResults = (...args) => {
+export const mergeResults = (...args) => {
     const dir = args[0] || process.argv[2]
     const filePattern = args[1] || process.argv[3]
     const customFileName = args[2] || process.argv[4]
@@ -53,5 +53,3 @@ function writeFile (dir, mergedResults, customFileName) {
     const filePath = path.join(dir, fileName)
     fs.writeFileSync(filePath, JSON.stringify(mergedResults))
 }
-
-module.exports = mergeResults
