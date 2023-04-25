@@ -14,7 +14,13 @@ There are breaking changes between WDIO v4 and v5 with how custom reporters work
 | ^1.0.0             | v5   |
 | ^2.0.0             | v6   |
 | ^3.0.0             | v7   |
+| ^4.0.0             | v8   |
 
+## Breaking changes
+
+### 4.0.0
+
+Converts to ESModules following suit with the same change made in WDIO v8.
 
 
 # WDIO v5 Compatibility
