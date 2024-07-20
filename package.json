@@ -1,6 +1,6 @@
 {
   "name": "wdio-json-reporter",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "A WebdriverIO plugin. Report results in json format.",
   "main": "./src/index.js",
   "files": [
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fijijavis/wdio-json-reporter.git"
+    "url": "git+https://github.com/jemishgopani/wdio-json-reporter.git"
   },
   "keywords": [
     "json",
@@ -23,14 +23,14 @@
     "wdio-plugin",
     "wdio-reporter"
   ],
-  "author": "Jim Davis <jim.davis@kroger.com>",
+  "author": "Jemish Gopani <jemishgopani2@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fijijavis/wdio-json-reporter/issues"
+    "url": "https://github.com/jemishgopani/wdio-json-reporter/issues"
   },
-  "homepage": "https://github.com/fijijavis/wdio-json-reporter#readme",
+  "homepage": "https://github.com/jemishgopani/wdio-json-reporter#readme",
   "dependencies": {
-    "@wdio/reporter": "^7.16.3",
+    "@wdio/reporter": "^8.39.0",
     "jest-matcher-utils": "^27.3.1"
   },
   "devDependencies": {
@@ -46,10 +46,11 @@
     "set-value": "~4.1.0"
   },
   "contributors": [
+    "Jemish Gopani",
     "Jim Davis"
   ],
   "peerDependencies": {
-    "@wdio/cli": "^7.16.3"
+    "@wdio/cli": "^>= 8.0.0"
   },
   "jest": {
     "testPathIgnorePatterns": [

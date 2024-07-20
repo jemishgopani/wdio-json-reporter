@@ -1,7 +1,7 @@
 module.exports = function (suiteTests) {
-    let tests = []
+    const tests = []
     /** Add Test Info */
-    for (let testName of Object.keys(suiteTests)) {
+    for (const testName of Object.keys(suiteTests)) {
         const test = suiteTests[testName]
         const testCase = {}
 

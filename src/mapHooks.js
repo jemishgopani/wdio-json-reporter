@@ -1,8 +1,8 @@
 module.exports = function (suiteHooks) {
-    let hooks = []
-    for (let hookName of Object.keys(suiteHooks)) {
+    const hooks = []
+    for (const hookName of Object.keys(suiteHooks)) {
         const hook = suiteHooks[hookName]
-        let hookResult = {}
+        const hookResult = {}
 
         hookResult.start = hook.start
         hookResult.end = hook.end

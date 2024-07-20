@@ -1,5 +1,5 @@
 module.exports = function (runner) {
-    let resultSet = {}
+    const resultSet = {}
 
     resultSet.start = runner.start
     resultSet.end = runner.end

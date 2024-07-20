@@ -10,18 +10,18 @@ class JsonReporter extends WDIOReporter {
     }
 
     onRunnerEnd (runner) {
-        let json = this.prepareJson(runner)
+        const json = this.prepareJson(runner)
         this.write(JSON.stringify(json))
     }
 
     prepareJson (runner) {
-        var resultSet = initResultSet(runner)
+        const resultSet = initResultSet(runner)
 
-        for (let specId of Object.keys(runner.specs)) {
+        for (const specId of Object.keys(runner.specs)) {
             resultSet.specs.push(runner.specs[specId])
-            for (let suiteKey of Object.keys(this.suites)) {
+            for (const suiteKey of Object.keys(this.suites)) {
                 const suite = this.suites[suiteKey]
-                let testSuite = {}
+                const testSuite = {}
                 testSuite.name = suite.title
                 testSuite.duration = suite._duration
                 testSuite.start = suite.start

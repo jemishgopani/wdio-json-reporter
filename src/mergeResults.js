@@ -49,7 +49,7 @@ function mergeData (rawData) {
 }
 
 function writeFile (dir, mergedResults, customFileName) {
-    let fileName = customFileName || 'wdio-merged.json'
+    const fileName = customFileName || 'wdio-merged.json'
     const filePath = path.join(dir, fileName)
     fs.writeFileSync(filePath, JSON.stringify(mergedResults))
 }
